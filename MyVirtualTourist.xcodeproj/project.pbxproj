@@ -13,6 +13,7 @@
 		E0A780CF1DFAD26500132F8A /* MyVirtualTourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0A780CD1DFAD26500132F8A /* MyVirtualTourist.xcdatamodeld */; };
 		E0A780D11DFAD26500132F8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A780D01DFAD26500132F8A /* Assets.xcassets */; };
 		E0A780D41DFAD26500132F8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A780D21DFAD26500132F8A /* LaunchScreen.storyboard */; };
+		E0A780E11DFAD56D00132F8A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A780E01DFAD56D00132F8A /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E0A780D01DFAD26500132F8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0A780D31DFAD26500132F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0A780D51DFAD26500132F8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0A780E01DFAD56D00132F8A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,46 @@
 			children = (
 				E0A780C61DFAD26500132F8A /* AppDelegate.swift */,
 				E0A780C81DFAD26500132F8A /* ViewController.swift */,
-				E0A780CA1DFAD26500132F8A /* Main.storyboard */,
-				E0A780D01DFAD26500132F8A /* Assets.xcassets */,
-				E0A780D21DFAD26500132F8A /* LaunchScreen.storyboard */,
-				E0A780D51DFAD26500132F8A /* Info.plist */,
-				E0A780CD1DFAD26500132F8A /* MyVirtualTourist.xcdatamodeld */,
+				E0A780DD1DFAD43700132F8A /* Controllers */,
+				E0A780DB1DFAD3EA00132F8A /* Models */,
+				E0A780DE1DFAD45F00132F8A /* Assets */,
+				E0A780DF1DFAD49200132F8A /* Supporting Files */,
 			);
 			path = MyVirtualTourist;
+			sourceTree = "<group>";
+		};
+		E0A780DB1DFAD3EA00132F8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0A780CD1DFAD26500132F8A /* MyVirtualTourist.xcdatamodeld */,
+				E0A780E01DFAD56D00132F8A /* CoreDataStack.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E0A780DD1DFAD43700132F8A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E0A780DE1DFAD45F00132F8A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E0A780D21DFAD26500132F8A /* LaunchScreen.storyboard */,
+				E0A780CA1DFAD26500132F8A /* Main.storyboard */,
+				E0A780D01DFAD26500132F8A /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		E0A780DF1DFAD49200132F8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0A780D51DFAD26500132F8A /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,7 +134,7 @@
 				TargetAttributes = {
 					E0A780C21DFAD26500132F8A = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = SJRX8SM5HE;
+						DevelopmentTeam = EN498SV6Q8;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -143,6 +178,7 @@
 				E0A780C91DFAD26500132F8A /* ViewController.swift in Sources */,
 				E0A780C71DFAD26500132F8A /* AppDelegate.swift in Sources */,
 				E0A780CF1DFAD26500132F8A /* MyVirtualTourist.xcdatamodeld in Sources */,
+				E0A780E11DFAD56D00132F8A /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SJRX8SM5HE;
+				DEVELOPMENT_TEAM = EN498SV6Q8;
 				INFOPLIST_FILE = MyVirtualTourist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daxapps.MyVirtualTourist;
@@ -278,7 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SJRX8SM5HE;
+				DEVELOPMENT_TEAM = EN498SV6Q8;
 				INFOPLIST_FILE = MyVirtualTourist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daxapps.MyVirtualTourist;
