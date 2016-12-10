@@ -17,6 +17,7 @@
 		E0A780E11DFAD56D00132F8A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A780E01DFAD56D00132F8A /* CoreDataStack.swift */; };
 		E0F107301DFC256F00A639EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F1072F1DFC256F00A639EA /* MapKit.framework */; };
 		E0F107321DFC2AF100A639EA /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F107311DFC2AF100A639EA /* GCDBlackBox.swift */; };
+		E0F107341DFCB48100A639EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F107331DFCB48100A639EA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		E0A780E01DFAD56D00132F8A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E0F1072F1DFC256F00A639EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E0F107311DFC2AF100A639EA /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
+		E0F107331DFCB48100A639EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				E0A780CD1DFAD26500132F8A /* MyVirtualTourist.xcdatamodeld */,
 				E0A780E01DFAD56D00132F8A /* CoreDataStack.swift */,
+				E0F107331DFCB48100A639EA /* Constants.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				E0A780C71DFAD26500132F8A /* AppDelegate.swift in Sources */,
 				E0A780CF1DFAD26500132F8A /* MyVirtualTourist.xcdatamodeld in Sources */,
 				E01118DC1DFB3DD900B4FAB5 /* MapViewController.swift in Sources */,
+				E0F107341DFCB48100A639EA /* Constants.swift in Sources */,
 				E0F107321DFC2AF100A639EA /* GCDBlackBox.swift in Sources */,
 				E0A780E11DFAD56D00132F8A /* CoreDataStack.swift in Sources */,
 			);

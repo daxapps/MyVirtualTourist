@@ -9,22 +9,39 @@
 import UIKit
 import MapKit
 
-class PhotoAlbumViewController: UIViewController {
+class PhotoAlbumViewController: UIViewController, MKMapViewDelegate {
 
-    //    @IBOutlet weak var smallMapView: MKMapView!
+        @IBOutlet weak var smallMapView: MKMapView!
     //    @IBOutlet weak var collectionView: UICollectionView!
     //    @IBOutlet weak var collectionCell: UICollectionViewCell!
+    
+    var annotation: MKAnnotation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let annotation = annotation {
+            smallMapView.addAnnotation(annotation)
+            smallMapView.centerCoordinate = annotation.coordinate
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.pinTintColor = .red
+        } else {
+            pinView!.annotation = annotation
+        }
+        
+        return pinView
     }
 
-
+    @IBAction func newCollectionButton(_ sender: Any) {
+    }
 }
 

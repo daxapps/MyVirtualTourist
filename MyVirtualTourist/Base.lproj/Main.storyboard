@@ -122,7 +122,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Pd7-jZ-gHA"/>
-                                    <barButtonItem title="New Collection" id="Idu-K3-8bd"/>
+                                    <barButtonItem title="New Collection" id="Idu-K3-8bd">
+                                        <connections>
+                                            <action selector="newCollectionButton:" destination="5Fl-gm-SRv" id="o4l-8D-Hqq"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="x3R-oE-oIC"/>
                                 </items>
                             </toolbar>

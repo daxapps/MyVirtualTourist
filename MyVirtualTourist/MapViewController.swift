@@ -46,6 +46,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let photoAlbumVC = storyboard?.instantiateViewController(withIdentifier: "PhotoAlbumViewController") as! PhotoAlbumViewController
+        photoAlbumVC.annotation = view.annotation
+        show(photoAlbumVC, sender: self)
+    }
+    
     // Mark: MKMapViewDelegate Functions
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
@@ -63,7 +69,5 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         return pinView
     }
     
-    @IBAction func removeMapPin(_ sender: Any) {
-    }
 
 }
