@@ -36,6 +36,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
     }
     
+    @IBAction func handleLongPress(_ recognizer: UILongPressGestureRecognizer) {
+        if recognizer.state == UIGestureRecognizerState.began {
+            let touchPoint = recognizer.location(in: mapView)
+            let coordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            mapView.addAnnotation(annotation)
+        }
+    }
+    
     // Mark: MKMapViewDelegate Functions
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
@@ -55,15 +65,5 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func removeMapPin(_ sender: Any) {
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

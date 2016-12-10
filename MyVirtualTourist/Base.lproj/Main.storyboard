@@ -37,8 +37,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ihE-7H-cfY">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihE-7H-cfY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zot-RO-J0u"/>
+                                </connections>
                             </mapView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Pin to Delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP2-gm-j5x">
                                 <rect key="frame" x="0.0" y="439" width="320" height="41"/>
@@ -82,7 +85,7 @@
         <!--Photo Album View Controller-->
         <scene sceneID="5ZF-R4-Lnf">
             <objects>
-                <viewController id="5Fl-gm-SRv" customClass="PhotoAlbumViewController" customModule="MyVirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoAlbumViewController" id="5Fl-gm-SRv" customClass="PhotoAlbumViewController" customModule="MyVirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LoX-Au-0b2"/>
                         <viewControllerLayoutGuide type="bottom" id="dac-2T-9zD"/>
