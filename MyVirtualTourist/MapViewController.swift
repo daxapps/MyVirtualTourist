@@ -36,6 +36,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
     }
     
+    @IBAction func editButton(_ sender: AnyObject) {
+        editIndicator.isHidden = !editIndicator.isHidden
+    }
+    
     @IBAction func handleLongPress(_ recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == UIGestureRecognizerState.began {
             let touchPoint = recognizer.location(in: mapView)
