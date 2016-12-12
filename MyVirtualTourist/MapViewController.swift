@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreData
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: CoreDataViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var editIndicator: UILabel!
@@ -50,12 +50,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let photoAlbumVC = storyboard?.instantiateViewController(withIdentifier: "PhotoAlbumViewController") as! PhotoAlbumViewController
-        photoAlbumVC.annotation = view.annotation
-        show(photoAlbumVC, sender: self)
-    }
-    
     // Mark: MKMapViewDelegate Functions
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
@@ -71,6 +65,20 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             pinView!.annotation = annotation
         }
         return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation as? PointAnnotation {
+            if editIndicator.isHidden {
+                let photoAlbumVC = storyboard?.instantiateViewController(withIdentifier: "PhotoAlbumViewController") as! PhotoAlbumViewController
+                photoAlbumVC.pin = annotation.pin
+                self.show(photoAlbumVC, sender: self)
+                mapView.deselectAnnotation(annotation, animated: false)
+            } else {
+                mapView.removeAnnotation(annotation)
+                stack.save()
+            }
+        }
     }
     
 

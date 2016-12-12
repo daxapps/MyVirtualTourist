@@ -21,6 +21,8 @@
 		E0E2E5FB1DFD969F0048355D /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2E5F71DFD969F0048355D /* Pin+CoreDataClass.swift */; };
 		E0E2E5FC1DFD969F0048355D /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2E5F81DFD969F0048355D /* Pin+CoreDataProperties.swift */; };
 		E0E2E5FF1DFDA3280048355D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2E5FE1DFDA3280048355D /* PhotoCollectionViewCell.swift */; };
+		E0E2E6011DFECBAA0048355D /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2E6001DFECBAA0048355D /* CoreDataViewController.swift */; };
+		E0E2E6031DFECCB40048355D /* UIViewController+TaskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E2E6021DFECCB40048355D /* UIViewController+TaskError.swift */; };
 		E0F107301DFC256F00A639EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F1072F1DFC256F00A639EA /* MapKit.framework */; };
 		E0F107321DFC2AF100A639EA /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F107311DFC2AF100A639EA /* GCDBlackBox.swift */; };
 		E0F107341DFCB48100A639EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F107331DFCB48100A639EA /* Constants.swift */; };
@@ -44,6 +46,8 @@
 		E0E2E5F71DFD969F0048355D /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataClass.swift"; path = "../Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E0E2E5F81DFD969F0048355D /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataProperties.swift"; path = "../Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E0E2E5FE1DFDA3280048355D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		E0E2E6001DFECBAA0048355D /* CoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		E0E2E6021DFECCB40048355D /* UIViewController+TaskError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+TaskError.swift"; sourceTree = "<group>"; };
 		E0F1072F1DFC256F00A639EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E0F107311DFC2AF100A639EA /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		E0F107331DFCB48100A639EA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 			children = (
 				E0A780C81DFAD26500132F8A /* PhotoAlbumViewController.swift */,
 				E01118DB1DFB3DD900B4FAB5 /* MapViewController.swift */,
+				E0E2E6001DFECBAA0048355D /* CoreDataViewController.swift */,
+				E0E2E6021DFECCB40048355D /* UIViewController+TaskError.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E2E6031DFECCB40048355D /* UIViewController+TaskError.swift in Sources */,
 				E0E2E5F91DFD969F0048355D /* Photo+CoreDataClass.swift in Sources */,
 				E0A780C91DFAD26500132F8A /* PhotoAlbumViewController.swift in Sources */,
 				E0E2E5F41DFD952F0048355D /* PointAnnotation.swift in Sources */,
@@ -241,6 +248,7 @@
 				E01118DC1DFB3DD900B4FAB5 /* MapViewController.swift in Sources */,
 				E0F107341DFCB48100A639EA /* Constants.swift in Sources */,
 				E0F107321DFC2AF100A639EA /* GCDBlackBox.swift in Sources */,
+				E0E2E6011DFECBAA0048355D /* CoreDataViewController.swift in Sources */,
 				E0E2E5FA1DFD969F0048355D /* Photo+CoreDataProperties.swift in Sources */,
 				E0E2E5FB1DFD969F0048355D /* Pin+CoreDataClass.swift in Sources */,
 				E0E2E5FC1DFD969F0048355D /* Pin+CoreDataProperties.swift in Sources */,

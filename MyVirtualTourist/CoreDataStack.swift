@@ -80,6 +80,12 @@ struct CoreDataStack {
     func addStoreCoordinator(_ storeType: String, configuration: String?, storeURL: URL, options : [NSObject:AnyObject]?) throws {
         try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: dbURL, options: nil)
     }
+    
+    func delete(objects: [NSManagedObject]) {
+        for object in objects {
+            context.delete(object)
+        }
+    }
 }
 
 // MARK: - CoreDataStack (Removing Data)
@@ -148,22 +154,22 @@ extension CoreDataStack {
         }
     }
     
-    func autoSave(_ delayInSeconds : Int) {
-        
-        if delayInSeconds > 0 {
-            do {
-                try self.context.save()
-                print("Autosaving")
-            } catch {
-                print("Error while autosaving")
-            }
-            
-            let delayInNanoSeconds = UInt64(delayInSeconds) * NSEC_PER_SEC
-            let time = DispatchTime.now() + Double(Int64(delayInNanoSeconds)) / Double(NSEC_PER_SEC)
-            
-            DispatchQueue.main.asyncAfter(deadline: time) {
-                self.autoSave(delayInSeconds)
-            }
-        }
-    }
+//    func autoSave(_ delayInSeconds : Int) {
+//        
+//        if delayInSeconds > 0 {
+//            do {
+//                try self.context.save()
+//                print("Autosaving")
+//            } catch {
+//                print("Error while autosaving")
+//            }
+//            
+//            let delayInNanoSeconds = UInt64(delayInSeconds) * NSEC_PER_SEC
+//            let time = DispatchTime.now() + Double(Int64(delayInNanoSeconds)) / Double(NSEC_PER_SEC)
+//            
+//            DispatchQueue.main.asyncAfter(deadline: time) {
+//                self.autoSave(delayInSeconds)
+//            }
+//        }
+//    }
 }
