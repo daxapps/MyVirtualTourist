@@ -86,11 +86,11 @@
 		E0A780C51DFAD26500132F8A /* MyVirtualTourist */ = {
 			isa = PBXGroup;
 			children = (
-				E0E2E5F21DFD94EE0048355D /* Views */,
-				E0A780C61DFAD26500132F8A /* AppDelegate.swift */,
 				E0F107311DFC2AF100A639EA /* GCDBlackBox.swift */,
-				E0A780DD1DFAD43700132F8A /* Controllers */,
+				E0A780C61DFAD26500132F8A /* AppDelegate.swift */,
 				E0A780DB1DFAD3EA00132F8A /* Models */,
+				E0E2E5F21DFD94EE0048355D /* Views */,
+				E0A780DD1DFAD43700132F8A /* Controllers */,
 				E0A780DE1DFAD45F00132F8A /* Assets */,
 				E0A780DF1DFAD49200132F8A /* Supporting Files */,
 			);

@@ -80,17 +80,9 @@ struct CoreDataStack {
     func addStoreCoordinator(_ storeType: String, configuration: String?, storeURL: URL, options : [NSObject:AnyObject]?) throws {
         try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: dbURL, options: nil)
     }
-    
-    func delete(objects: [NSManagedObject]) {
-        for object in objects {
-            context.delete(object)
-        }
-    }
-}
+ 
 
 // MARK: - CoreDataStack (Removing Data)
-
-internal extension CoreDataStack  {
     
     func dropAllData() throws {
         // delete all the objects in the db. This won't delete the files, it will
@@ -98,11 +90,14 @@ internal extension CoreDataStack  {
         try coordinator.destroyPersistentStore(at: dbURL, ofType: NSSQLiteStoreType , options: nil)
         try addStoreCoordinator(NSSQLiteStoreType, configuration: nil, storeURL: dbURL, options: nil)
     }
-}
+    
+    func delete(objects: [NSManagedObject]) {
+        for object in objects {
+            context.delete(object)
+        }
+    }
 
 // MARK: - CoreDataStack (Batch Processing in the Background)
-
-extension CoreDataStack {
     
     typealias Batch = (_ workerContext: NSManagedObjectContext) -> ()
     
@@ -121,11 +116,8 @@ extension CoreDataStack {
             }
         }
     }
-}
 
 // MARK: - CoreDataStack (Save Data)
-
-extension CoreDataStack {
     
     func save() {
         // We call this synchronously, but it's a very fast
@@ -153,23 +145,4 @@ extension CoreDataStack {
             }
         }
     }
-    
-//    func autoSave(_ delayInSeconds : Int) {
-//        
-//        if delayInSeconds > 0 {
-//            do {
-//                try self.context.save()
-//                print("Autosaving")
-//            } catch {
-//                print("Error while autosaving")
-//            }
-//            
-//            let delayInNanoSeconds = UInt64(delayInSeconds) * NSEC_PER_SEC
-//            let time = DispatchTime.now() + Double(Int64(delayInNanoSeconds)) / Double(NSEC_PER_SEC)
-//            
-//            DispatchQueue.main.asyncAfter(deadline: time) {
-//                self.autoSave(delayInSeconds)
-//            }
-//        }
-//    }
 }
