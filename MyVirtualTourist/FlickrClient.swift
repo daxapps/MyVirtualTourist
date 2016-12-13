@@ -6,6 +6,7 @@
 //  Copyright © 2016 Jason Crawford. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class FlickrClient: NSObject {

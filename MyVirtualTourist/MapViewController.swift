@@ -18,22 +18,26 @@ class MapViewController: CoreDataViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        // set initial location in Honolulu
-//        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-//        centerMapOnLocation(location: initialLocation)
         
-        // Set map view delegate with controller
-        self.mapView.delegate = self
+        title = "Virtual Tourist"
         
-        let newYorkLocation = CLLocationCoordinate2DMake(40.730872, -74.003066)
-        // Drop a pin
-        let dropPin = MKPointAnnotation()
-        dropPin.coordinate = newYorkLocation
-        dropPin.title = "New York City"
-        mapView.addAnnotation(dropPin)
-        
+        // Get the stack
+        fetchStoredPins { (fetchedPins) in
+            performUpdatesOnMain {
+                for pin in fetchedPins {
+                    self.mapView.addAnnotation(pin.annotation)
+                }
+            }
+        }
+    }
+    
+    func fetchStoredPins(completion: ((_ fetchedPins: [Pin]) -> Void)?) {
+        let fetchRequst = NSFetchRequest<NSManagedObject>(entityName: "Pin")
+        fetchRequst.sortDescriptors = [NSSortDescriptor(key: "latitude", ascending: true)]
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequst, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController?.delegate = self
+        executeSearch()
+        completion?(fetchedResultsController?.fetchedObjects as! [Pin])
     }
     
     @IBAction func editButton(_ sender: AnyObject) {
@@ -44,9 +48,9 @@ class MapViewController: CoreDataViewController, MKMapViewDelegate {
         if recognizer.state == UIGestureRecognizerState.began {
             let touchPoint = recognizer.location(in: mapView)
             let coordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = coordinate
-            mapView.addAnnotation(annotation)
+            let pin = Pin(with: coordinate, insertInto: fetchedResultsController!.managedObjectContext)
+            mapView.addAnnotation(pin.annotation)
+            stack.save()
         }
     }
     
@@ -60,8 +64,7 @@ class MapViewController: CoreDataViewController, MKMapViewDelegate {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.pinTintColor = .red
             pinView!.animatesDrop = true
-        }
-        else {
+        } else {
             pinView!.annotation = annotation
         }
         return pinView
@@ -80,6 +83,4 @@ class MapViewController: CoreDataViewController, MKMapViewDelegate {
             }
         }
     }
-    
-
 }
