@@ -10,16 +10,34 @@ import UIKit
 import MapKit
 import CoreData
 
-class MapViewController: CoreDataViewController, MKMapViewDelegate {
+class MapViewController: CoreDataViewController, MKMapViewDelegate, UIGestureRecognizerDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var editIndicator: UILabel!
     
+    var editMode = Bool()
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing,animated:animated)
+        if (self.isEditing) {
+            //In Editing mode
+            self.editButtonItem.title = "Done"
+            editIndicator.isHidden = false
+            editMode = true
+        } else {
+            //Not in editing mode
+            self.editButtonItem.title = "Edit"
+            editIndicator.isHidden = true
+            editMode = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Virtual Tourist"
+        
+        navigationItem.rightBarButtonItem = editButtonItem
         
         // Get the stack
         fetchStoredPins { (fetchedPins) in

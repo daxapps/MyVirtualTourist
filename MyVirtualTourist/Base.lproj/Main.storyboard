@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R86-wC-RYp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R86-wC-RYp">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,14 +68,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ihE-7H-cfY" secondAttribute="bottom" id="zTh-K1-gSX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Virtual Tourist" id="wpY-bd-0iv">
-                        <barButtonItem key="backBarButtonItem" title="OK" id="zel-aM-mgA"/>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="PGi-Ed-umm">
-                            <connections>
-                                <action selector="editButton:" destination="BYZ-38-t0r" id="vp3-44-yyu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Virtual Tourist" id="wpY-bd-0iv"/>
                     <connections>
                         <outlet property="editIndicator" destination="qP2-gm-j5x" id="VdE-eb-pp5"/>
                         <outlet property="mapView" destination="ihE-7H-cfY" id="wnS-Tg-IQt"/>
