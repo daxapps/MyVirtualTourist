@@ -69,9 +69,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Virtual Tourist" id="wpY-bd-0iv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="CFv-q8-jko">
+                        <barButtonItem key="backBarButtonItem" title="OK" id="zel-aM-mgA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="PGi-Ed-umm">
                             <connections>
-                                <action selector="editButton:" destination="BYZ-38-t0r" id="h7V-mK-ebA"/>
+                                <action selector="editButton:" destination="BYZ-38-t0r" id="vp3-44-yyu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -87,7 +88,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="140.625" y="100"/>
+            <point key="canvasLocation" x="204" y="100"/>
         </scene>
         <!--Photo Album View Controller-->
         <scene sceneID="5ZF-R4-Lnf">

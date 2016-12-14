@@ -26,6 +26,13 @@ class CoreDataViewController: UIViewController, NSFetchedResultsControllerDelega
         super.init(coder: aDecoder)
     }
     
+    func presentError(title: String, errorMessage: String) {
+        let alertController = UIAlertController(title: title, message: errorMessage, preferredStyle: UIAlertControllerStyle.alert)
+        let alertAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func executeSearch() {
         if let fc = fetchedResultsController {
             do {
