@@ -26,12 +26,19 @@ class PhotoAlbumViewController: CoreDataViewController, MKMapViewDelegate, UICol
     let itemsPerRowInLandscape = 6
     let spaceBetweenItems: CGFloat = 3.0
     
+    let annotation = MKPointAnnotation()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         photoCollectionView.allowsMultipleSelection = true
         configureFlowLayout(viewWidth: view.frame.width, viewHeight: view.frame.height)
         
         addAnnotationToMapView(completion: nil)
+        
+        annotation.coordinate.latitude = (pin?.latitude)! as Double
+        annotation.coordinate.longitude = (pin?.longitude)! as Double
+        
+        centerMapOnLocation(annotation, regionRadius: 500.0)
         
         fetchStoredPhotos() {
             performUpdatesOnMain {
@@ -241,6 +248,13 @@ class PhotoAlbumViewController: CoreDataViewController, MKMapViewDelegate, UICol
         }
         
         return pinView
+    }
+    
+    //Centers the map on a coordinate (with lat and lon) with requisite radius
+    func centerMapOnLocation(_ location: MKPointAnnotation, regionRadius: Double) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
 
     // MARK: UICollectionViewDataSource
