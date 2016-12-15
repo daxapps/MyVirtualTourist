@@ -68,7 +68,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ihE-7H-cfY" secondAttribute="bottom" id="zTh-K1-gSX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Virtual Tourist" id="wpY-bd-0iv"/>
+                    <navigationItem key="navigationItem" title="Virtual Tourist" id="wpY-bd-0iv">
+                        <barButtonItem key="backBarButtonItem" title="OK" id="cTO-ng-6tR"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="editIndicator" destination="qP2-gm-j5x" id="VdE-eb-pp5"/>
                         <outlet property="mapView" destination="ihE-7H-cfY" id="wnS-Tg-IQt"/>

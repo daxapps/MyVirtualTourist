@@ -110,8 +110,8 @@
 		E0A780DD1DFAD43700132F8A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E0A780C81DFAD26500132F8A /* PhotoAlbumViewController.swift */,
 				E01118DB1DFB3DD900B4FAB5 /* MapViewController.swift */,
+				E0A780C81DFAD26500132F8A /* PhotoAlbumViewController.swift */,
 				E0E2E6001DFECBAA0048355D /* CoreDataViewController.swift */,
 			);
 			name = Controllers;

@@ -295,8 +295,7 @@ class PhotoAlbumViewController: CoreDataViewController, MKMapViewDelegate, UICol
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
         let cell = photoCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
         print(cell.isSelected)
         cell.imageView.alpha = 0.5

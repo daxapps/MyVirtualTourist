@@ -11,6 +11,11 @@ import UIKit
 
 class FlickrClient: NSObject {
     
+    struct PhotoMeta {
+        let url: URL
+        let title: String
+    }
+    
     // MARK: HTTPMethods
     enum HTTPMethod: String {
         case get = "GET"
@@ -219,9 +224,3 @@ class FlickrClient: NSObject {
     }
 }
 
-extension FlickrClient {
-    struct PhotoMeta {
-        let url: URL
-        let title: String
-    }
-}
